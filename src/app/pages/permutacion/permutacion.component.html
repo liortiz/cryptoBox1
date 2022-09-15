@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="Permutacion">
     <div>&nbsp;</div> 
     <div><h1 class="text-center">Permutation</h1></div>
     <div>&nbsp;</div> 
@@ -14,23 +14,55 @@
         </li>
     </ul>
     <div>&nbsp;</div> 
+
     <div class="tab-content" id="myTabContent">
+
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <form>
+            <form [formGroup] = "formPermutation" #form = "ngForm" (ngSubmit)="capturarValores()">
             <div class="form-group">
                 <label>Text to encrypt</label>
-                <input class="form-control" placeholder="Enter text">
+                <input matinput class="form-control" formControlName = "text" name="text" required>
             </div>
             <div>&nbsp;</div> 
             <div class="form-group">
                 <label>Key</label>
-                <input class="form-control" placeholder="Key">
+                <input matinput class="form-control" formControlName= "key" name="key">
             </div>
             <div>&nbsp;</div> 
             <button type="submit" class="btn btn-primary bg-dark">Submit</button>
-            </form>        
+            </form> 
+            <h1> {{textEncrypt}}</h1>
+            
+
+
         </div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+
+
+
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <form>
+                <div class="form-group">
+                    <label>Text to desencrypt</label>
+                    <input class="form-control" placeholder="Enter text">
+                </div>
+                <div>&nbsp;</div> 
+                <div class="form-group">
+                    <label>Key</label>
+                    <input class="form-control" placeholder="Key">
+                </div>
+                <div>&nbsp;</div> 
+                <button type="submit" class="btn btn-primary bg-dark">Submit</button>
+                </form>  
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <form>
+                <div class="form-group">
+                    <label>Text to atack</label>
+                    <input class="form-control" placeholder="Enter text">
+                </div>
+                <div>&nbsp;</div> 
+                <button type="submit" class="btn btn-primary bg-dark">Submit</button>
+                </form>  
+        </div>
     </div>
 </div> 

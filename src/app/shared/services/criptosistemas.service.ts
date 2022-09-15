@@ -10,7 +10,7 @@ export class CriptosistemasService {
 
   constructor(private http: HttpClient) { }
 
-  getPermutacionE(text:String,permutation:String):Observable<any>{
+  getPermutacionE(text:string,permutation:string):Observable<any>{
     return this.http.get(`${this.baseURL}/permutacion/encript/${text}&${permutation}`)
   }
 

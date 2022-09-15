@@ -5,7 +5,7 @@ from classCryptosystems.desplazamiento import desplazamiento
 from classCryptosystems.permutacion import permutacion
 
 app = Flask(__name__)
-
+app.debug = True;
 # AFIN 
 # DESPLAZAMIENTO 
 
