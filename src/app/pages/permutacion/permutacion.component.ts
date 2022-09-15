@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CriptosistemasService} from '../../shared/services/criptosistemas.service'
 
 @Component({
   selector: 'app-permutacion',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PermutacionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private coneccion: CriptosistemasService) { }
 
   ngOnInit(): void {
+    this.coneccion.getPermutacionE('hola','0,2')
+    .subscribe(data=>{
+      console.log(data)
+    },
+    error=>console.log(error))
   }
 
 }
